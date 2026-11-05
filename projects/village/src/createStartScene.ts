@@ -33,11 +33,11 @@ function createTerrain(scene: Scene) {
     "largeGround",
     "./assets/environments/villageheightmap.png",
     {
-      width: 150,
-      height: 150,
+      width: 250,
+      height: 250,
       subdivisions: 20,
       minHeight: 0,
-      maxHeight: 10,
+      maxHeight: 15,
     },
     scene
   );
@@ -48,7 +48,7 @@ function createTerrain(scene: Scene) {
 function createGround(scene: Scene) {
   const groundMaterial = new StandardMaterial("groundMaterial");
   groundMaterial.diffuseTexture = new Texture(
-    "./assets/environments/villagegreen.png"
+    "./assets/environments/valleygrass.png"
   );
   groundMaterial.diffuseTexture.hasAlpha = true;
   groundMaterial.backFaceCulling = false;
@@ -99,7 +99,7 @@ function createSky(scene: Scene) {
     scene
   );
   skyboxMaterial.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE;
-  skyboxMaterial.diffuseColor = new Color3(0, 0, 0);
+  skyboxMaterial.diffuseColor = new Color3(0, 0, .4);
   skyboxMaterial.specularColor = new Color3(0, 0, 0);
   skybox.material = skyboxMaterial;
   return skybox;
@@ -224,7 +224,7 @@ function createTrees(scene: Scene) {
   const spriteManagerTrees = new SpriteManager(
     "treesManager",
     "./assets/sprites/tree.png",
-    200,
+    300,
     { width: 512, height: 1024 },
     scene
   );
@@ -265,10 +265,10 @@ function createHemisphericLight(scene: Scene) {
     new Vector3(2, 1, 0), // move x pos to direct shadows
     scene
   );
-  light.intensity = 0.8;
-  light.diffuse = new Color3(1, 1, 1);
-  light.specular = new Color3(1, 0.8, 0.8);
-  light.groundColor = new Color3(0, 0.2, 0.7);
+  light.intensity = 1.4;
+  light.diffuse = new Color3(1.2, 1.2, 1.2);
+  light.specular = new Color3(1, 1, 1);
+  light.groundColor = new Color3(0, 0.6, 1);
   return light;
 }
 
