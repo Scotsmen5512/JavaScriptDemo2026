@@ -11,9 +11,9 @@ const mimeTypes: Record<string, string> = {
   ".css": "text/css",
   ".png": "image/png",
   ".jpg": "image/jpeg",
-  ".wav": "audio/wav",
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
+  ".wasm": "application/wasm",
 };
 
 Bun.serve({

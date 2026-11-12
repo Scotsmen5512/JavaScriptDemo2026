@@ -3,8 +3,21 @@
     <head>
         <base href="/projects/village/">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Village Environment</title>
+        <link rel="stylesheet" href="./src/main.css">
     </head>
-    <body> <div id="3d"></div> </body>
+    <body>
+        <main class="village-layout">
+            <section class="village-hud" aria-label="Village environment information">
+                <span class="village-mark" aria-hidden="true">✦</span>
+                <div>
+                    <h1>Village Environment</h1>
+                    <p>CREATED BY EVAN MONTGOMERY</p>
+                </div>
+            </section>
+            <div id="3d"></div>
+        </main>
+        <script type="module" src="./src/index.ts"></script>
+    </body>
 </html>
-<script type="module" src="./src/index.ts"></script>
