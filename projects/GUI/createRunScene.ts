@@ -10,12 +10,12 @@ export default function createRunScene(runScene: SceneData) {
   hud.setAttribute("aria-label", "Trail progress and controls");
   hud.innerHTML = `
     <div class="trail-heading">
-      <div class="trail-brand"><span class="trail-mark">✦</span><div><strong>Trail Game</strong><small>BY EVAN MONTGOMERY</small></div></div>
+      <div class="trail-brand"><span class="trail-mark">4</span><div><strong>Trail Game</strong><small>BY EVAN MONTGOMERY</small></div></div>
       <div class="pickup-counter" aria-live="polite"><span class="pickup-icon">✿</span><span id="pickup-count">0 / ${requiredPickups}</span></div>
     </div>
     <div class="trail-tip"><strong id="trail-status">Find all the mushrooms</strong><span>WASD / arrows to move - Space to jump</span></div>
     <div class="trail-finish" id="trail-finish" role="status" aria-live="polite">
-      <span class="finish-sparkle">✦</span><p class="finish-kicker">TRAIL COMPLETE</p>
+      <span class="finish-sparkle">4</span><p class="finish-kicker">TRAIL COMPLETE</p>
       <h1>A lovely little haul.</h1><p>You found every mushroom and made it to the clearing.</p>
       <button id="trail-restart" type="button">Explore again <span>↻</span></button>
     </div>
