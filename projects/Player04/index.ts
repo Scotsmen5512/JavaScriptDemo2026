@@ -9,24 +9,27 @@ const CanvasName = "renderCanvas";
 
 let canvas = document.createElement("canvas");
 canvas.id = CanvasName;
-canvas.width = 1280;
-canvas.height = 720;
+canvas.width = 800;   // Set internal resolution
+canvas.height = 400;
 
 canvas.classList.add("background-canvas");
+document.body.style.display = "flex";
+document.body.style.justifyContent = "center"; // Horizontal centering
+document.body.style.alignItems = "center";     // Vertical centering
+document.body.style.minHeight = "100vh";       // Use full viewport height
+document.body.style.margin = "0"; 
 document.body.appendChild(canvas);
 
 let eng = new Engine(canvas, true, {}, true);
 
 async function main() {
   const startScene = await createStartScene(eng);
-  createCharacterController(startScene);
+  createCharacterController(startScene.scene);
   createRunScene(startScene);
 
   eng.runRenderLoop(() => {
     startScene.scene.render();
   });
-
-  window.addEventListener("resize", () => eng.resize());
 }
 
 void main();

@@ -33,13 +33,12 @@ export function createCharacterController(sceneData: SceneData) {
   // Create visual capsule mesh
   const h = 1.8;
   const r = 0.6;
-  const startPosition = new Vector3(0, h / 2, -22);
   let displayCapsule = MeshBuilder.CreateCapsule(
     "CharacterDisplay",
     { height: h, radius: r },
     scene
   );
-  displayCapsule.position.copyFrom(startPosition);
+  displayCapsule.position = new Vector3(0, h / 2, 0);
   
   // Apply material for visibility
   const capsuleMat = new StandardMaterial("capsuleMat", scene);
@@ -49,9 +48,11 @@ export function createCharacterController(sceneData: SceneData) {
   displayCapsule.isVisible = false;
   
   // Debug: log initial position
+  console.log("Capsule initial position:", displayCapsule.position);
+
   // Create physics character controller
   let characterController = new PhysicsCharacterController(
-    startPosition.clone(),
+    displayCapsule.position.clone(),
     { capsuleHeight: h, capsuleRadius: r },
     scene
   );
@@ -140,7 +141,7 @@ export function createCharacterController(sceneData: SceneData) {
   // Sync visual mesh with physics controller every frame
   scene.onBeforeRenderObservable.add(() => {
     const position = characterController.getPosition();
-    //displayCapsule.position.copyFrom(position);
+    displayCapsule.position.copyFrom(position);
 
     const farmer = sceneData.farmer;
     if (!farmer) return;

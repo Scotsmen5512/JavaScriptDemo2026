@@ -1,28 +1,21 @@
 import {
   Scene,
   Mesh,
-  AbstractMesh,
   HemisphericLight,
-  ArcRotateCamera,
+  Camera,
   PhysicsAggregate,
-  TransformNode,
   AnimationGroup,
-  Vector3,
+  TransformNode,
 } from "@babylonjs/core";
 
-export interface Collectible {
-  mesh: AbstractMesh;
-  position: Vector3;
-  marker?: AbstractMesh;
-}
-
 export interface SceneData {
-      scene: Scene;
-      light?: HemisphericLight;
-      ground?: PhysicsAggregate;
-      camera?: ArcRotateCamera;
-      farmer?: TransformNode;
-      farmerIdleAnimation?: AnimationGroup;
-      farmerWalkAnimation?: AnimationGroup;
-      collectibles?: Collectible[];
+  scene: Scene;
+  light?: HemisphericLight;
+  ground?: PhysicsAggregate;
+  camera?: Camera;
+  box1?: Mesh;
+  box2?: Mesh;
+  farmer?: TransformNode;
+  farmerIdleAnimation?: AnimationGroup;
+  farmerWalkAnimation?: AnimationGroup;
 }
