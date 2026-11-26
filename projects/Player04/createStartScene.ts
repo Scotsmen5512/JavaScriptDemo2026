@@ -15,7 +15,6 @@ import {
   PhysicsShapeType,
   Color3,
   StandardMaterial,
-  Texture,
   AbstractMesh,
   MeshAssetTask,
   TransformNode,
@@ -68,10 +67,9 @@ function createBox1(scene: Scene) {
   box.position.y = 3;
   box.position.z = 1;
 
-  var texture = new StandardMaterial("reflective", scene);
-  texture.ambientTexture = new Texture("./assets/textures/wood.jpg", scene);
-  texture.diffuseColor = new Color3(1, 1, 1);
-  box.material = texture;
+  const material = new StandardMaterial("boxMaterial1", scene);
+  material.diffuseColor = new Color3(0.48, 0.26, 0.12);
+  box.material = material;
   new PhysicsAggregate(
     box,
     PhysicsShapeType.BOX,
@@ -87,10 +85,9 @@ function createBox2(scene: Scene) {
   box.position.y = 5;
   box.position.z = 1;
 
-  var texture = new StandardMaterial("reflective", scene);
-  texture.ambientTexture = new Texture("./assets/textures/wood.jpg", scene);
-  texture.diffuseColor = new Color3(1, 1, 1);
-  box.material = texture;
+  const material = new StandardMaterial("boxMaterial2", scene);
+  material.diffuseColor = new Color3(0.48, 0.26, 0.12);
+  box.material = material;
   new PhysicsAggregate(
     box,
     PhysicsShapeType.BOX,

@@ -3,8 +3,21 @@
     <head>
         <base href="/projects/lighting01/">
         <meta charset="UTF-8">
-        <title>Lighting01</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lighting</title>
+        <link rel="stylesheet" href="./main.css">
     </head>
-    <body> <div id="3d"></div> </body>
+    <body>
+        <main class="lighting-layout">
+            <section class="lighting-hud" aria-label="Lighting information">
+                <span class="lighting-mark" aria-hidden="true">1</span>
+                <div>
+                    <h1>lighting</h1>
+                    <p>BY EVAN MONTGOMERY</p>
+                </div>
+            </section>
+            <div id="scene-container"></div>
+        </main>
+        <script type="module" src="./index.ts"></script>
+    </body>
 </html>
-<script type="module" src="./index.ts"></script>

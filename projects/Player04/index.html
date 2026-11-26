@@ -3,8 +3,21 @@
     <head>
         <base href="/projects/Player04/">
         <meta charset="UTF-8">
-        <title>Player04</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Player Scene</title>
+        <link rel="stylesheet" href="./main.css">
     </head>
-    <body> <div id="3d"></div> </body>
+    <body>
+        <main class="player04-layout">
+            <section class="player04-hud" aria-label="Player scene information">
+                <span class="player04-mark" aria-hidden="true">3</span>
+                <div>
+                    <h1>Player Scene</h1>
+                    <p>BY EVAN MONTGOMERY</p>
+                </div>
+            </section>
+            <div id="scene-container"></div>
+        </main>
+        <script type="module" src="./index.ts"></script>
+    </body>
 </html>
-<script type="module" src="./index.ts"></script>
